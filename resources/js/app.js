@@ -9,7 +9,8 @@ import VueAxios from 'vue-axios'
 
 //Routes
 import { routes } from './routes';
-
+import AppComponent from './components/AppComponent';
+import DraftComponent from './components/DraftComponent';
 Vue.use(VueRouter)
 Vue.use(Vuex)
 Vue.use(VueAxios, axios)
@@ -22,7 +23,10 @@ const store = new Vuex.Store(
 export const router = new VueRouter({
     base: '/',
     mode: 'history',
-    routes
+    routes:[
+     { path: "/", name: "home",component: AppComponent },
+    { path: "/", name: "draft",component: DraftComponent },
+    ]
 
 });
 

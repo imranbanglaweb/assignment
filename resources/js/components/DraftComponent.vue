@@ -3,7 +3,7 @@
     <br>
     <br>
     <br>
-    <h3>Assignment</h3>
+    <h3>Draft Section</h3>
     <br>
     <table class="table table-striped table-default">
   <thead>
@@ -16,7 +16,7 @@
     </tr>
   </thead>
   <tbody>
-      <tr v-for="(save_publ, k) in save_publication" :key="k">
+      <tr v-for="(save_publ, k) in save_publication_draft" :key="k">
 
       <td>
     
@@ -52,7 +52,7 @@
     Add
 </button>
   
-    <tr>
+<tr>
         <td>
     <router-link :to="{ name: 'home' }" class="btn btn-danger">Cancel</router-link>
     
@@ -80,9 +80,9 @@
         publication: null,
         inventory_type: null,
         gross_rate: null,
-        options: ['DFP', 'Social', 'Print'],
+        options: ['Laravel', 'Laravel 5', 'Vue JS', 'ItSolutionStuff.com', 'HDTuto.com'],
         optionstwo: ['Premium', 'Super Premium', 'Special', 'ROS'],
-       save_publication: [{
+       save_publication_draft: [{
             publication: '',
             inventory_type: '',
             gross_rate: '',
@@ -108,21 +108,13 @@
 
       methods:{
        saveInvoice() {
-            console.log(JSON.stringify(this.save_publication));
+            console.log(JSON.stringify(this.save_publication_draft));
         },
        getItems(data) {
      
         },
    
-        addNewRow() {
-            this.save_publication.push({
-                publication: '',
-                inventory_type: '',
-                gross_rate: '',
-                
-            });
-
-        },
+   
             deleteRow(k){    
         this.save_publication.splice(k,1);             
     } 

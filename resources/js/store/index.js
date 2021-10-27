@@ -2,7 +2,12 @@ export default {
 
 	state: {
 
-       category: []
+              save_publication: [{
+            publication: '',
+            inventory_type: '',
+            gross_rate: '',
+           
+        }]
 
 	},
 
@@ -20,8 +25,8 @@ export default {
           axios.get("/")
 
                .then((response)=>{
-                  console.log(response.data.save_publication)
-                  context.commit("categories",response.data.save_publication) //save_publication will be run from mutation
+                  console.log(response.data.save_publication_draft)
+                  context.commit("categories",response.data.save_publication_draft) //save_publication will be run from mutation
 
                })
 
